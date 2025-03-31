@@ -1,0 +1,147 @@
+<< fontend >>
+    참고 : basic 폴더
+
+    웹(앱) 개발 : 프론트 / 백엔드
+        - frontend : html, css, javascript, react, vue...
+        - backend : node.js, java, python, 닷넷...
+
+        기반기술 : 서버, 네트워크
+
+    => 브라우저 기반
+    - 브라우저를 통해서 실행될 수 있는 언어
+        1) HTML(HyperText Markup Language)
+            참고 : index, text, list
+            => 웹브라우저에서 표기되도록 설계된 표준 마크업 언어
+            => 화면 구조 설계
+
+            * 마크업 : 태그
+            * <html> : 열기 </html> 닫기 => <> + </> 열고 닫기임
+            * ! 엔터 : 자동완성(에밋)
+            * ctrl + / : 주석
+            
+            - 타입
+                => 가장 처음 타입을 선언
+                    => ex. DOCTYPE html => html5
+
+            - 태그 (암기)
+                - 속성 : 키=값 => ex. 태그 : html / 속성 : lang="en"
+
+                * 부분 잡기 => ctrl + shift + p => wrap => b : 부분만 잡아서 태그 처리하기
+
+                => 대소문자 구분하지 않음
+                => 엔터가 적용되지 않음 => 엔터 적용 : br 태그 == enter(1번)
+                    => <br /> : 닫는 태그가 아니라서 사용하는거
+                => 공백(스페이스바)은 한번만 적용
+                => 부모 - 자식 존재 : 자식이 보여지고 그것을 감싸는 부모가 보여짐
+
+                - bodytag
+                    1) heading tag : h1 ~ h6
+                        => 크기, bold, enter(가 들어있음)
+
+                    2) paragraphs(문단) tag : p
+                        => 자동 줄바꿈(엔터)가 들어감
+
+                    3) format tag
+                        참고 : text
+
+                        1. 진하게
+                            b : bold text
+                            strong : Important
+                        2. 기울임
+                            i : Italic text
+                            em : Emphasize text
+                        3. 글자 가운데 취소선
+                            del : deleted text
+                        4. 첨자
+                            sup : 윗첨자
+                            sub : 아랫첨자
+                    
+                    4) list tag : 목록태그
+                        참고 : list
+
+                        1. 순서 없는 목록
+                            ul : unordered list
+                        2. 순서 있는 목록
+                            ol : ordered list
+                                => start="숫자" : 번호 시작 순서
+                                => type="타입" : 숫자 대신 순서를 표현하는 방식
+                        * 하나의 목록
+                            li : list item
+                        3. dl : description list
+                            dt : description-term => 단어 정의
+                            dd : description-description => 단어 설명
+                    
+                    5) link tag
+                        참고 : link
+
+                            * id : id로 가려면 링크 안에 #을 붙여서 갈수 있음
+                            
+                        - a
+                          href="" : ""안에 연결할 사이트 주소 or 파일(다운로드) or 이메일
+                            * ./내가만든페이지 : 내가만든 페이지로 이동
+                            - 외부주소(다른 사이트) or 내부주소(같은 사이트 내의 다른 페이지)
+                                1) 상대경로(주소) : 같은 사이트 내의 다른페이지
+                                    => ( . ) : 현재경로
+                                    => ( . . ) : 상위경로
+                                    * 같은경로 : (.)점을 굳이 안찍어도 됨 
+                                2) 절대경로(주소) : 
+                                    => ex. https://www.naver.com/, c:/download/
+
+                                - 파일을 연결한 경우
+                                    => 브라우저가 해석이 가능한 파일이면 바로 열림
+                                        - download : 다운로드 창이 나오게 할 수 있음
+                                    => 해석이 불가능할 경우 다운로드 창이 나옴
+
+                          target="" : 연결할 사이트를 어디에서 열 것인가?
+                            => _self (default) : 현재 창에서 열림
+                            => _blank : 새창에서 열림
+                          download="" : 특정파일을 다운로드하게 할 수 있음
+                            * txt 파일은 브라우저가 해석이 가능해서 바로 열림
+
+                            방문 안한 링크 : unvisited link => 밑줄, blue
+                            방문 한 링크 : visited link => 밑줄, purple
+                            링크 누를때 : active link => 밑줄, red
+
+                    6) img tag
+                        참고 : img
+
+                        src="" : 경로
+                            => 존재하지 않는 경로면 alt만 뜸
+                            => dowload 한 것과 다른 이미지 주소를 복사해서 사용 가능
+                        alt="" : 시각장애인을 위한 무슨 사진인지 설명해주는 말
+                        => 이미지가 너무 크면 사이즈 조절 필요
+                        => 적절한 사이즈는 바둑판식으로 들어감
+                    
+                    7) table tag : ★★★ 수업 중요 태그 ★★★
+                        참고 : table
+
+                        * 내용을 넣어줘야 공간을 잡고 보여줌
+                        * &nbsp; : 공백(스페이스바) 1번
+
+                        table
+                         tr(행 - row)
+                          td(열 - column)
+                            colspan="숫자" : 만들어진 열에 맞춰 숫자를 입력하면 병합함
+                            rowspan="숫자" : 만들어진 행에 맞춰 숫자를 입력하면 병합함
+                                => 그만큼 다음 행의 열의 개수가 조정되야 함
+                          th(열 - 제목 column) : bold, 수평(center 정렬)
+
+
+            - 실행
+                마우스 오른쪽 => open with live server
+
+            head & body
+                head : 크롬의 창 이름 같은 느낌
+                body : 크롬의 화면에 송출
+
+            - preitier
+                => 자동으로 작성한 코드들을 정리해주는 용도
+
+            - auto rename tag
+                => 앞에 태크를 바꾸면 자동으로 뒷 태그도 바꿔주는 거
+
+            - 인터넷 브라우저에서 f12
+                => devtools : 브라우저가 가진 개발자를 위한 코드
+                    => head의 main.css 지우면 실체가 나온다...
+
+
