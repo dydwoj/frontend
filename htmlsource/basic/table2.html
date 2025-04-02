@@ -4,39 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      .f1-1 {
+        width: 200px;
+        height: 200px;
+        background-image: url(../image/img2.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+      .f1-2 {
+        width: 400px;
+        height: 100px;
+        font-size: 2em;
+      }
+      .f2-1 + td {
+        width: 400px;
+        height: 100px;
+      }
+      .bd {
+        width: 150px;
+      }
+      [class^="cl"] {
+        width: 400px;
+        height: 50px;
+      }
+      .blank {
+        width: 200px;
+        height: 400px;
+      }
+      .sign {
+        height: 50px;
+      }
+      .sign {
+        text-align: right;
+        padding-right: 40px;
+        background-image: url(../image/사인도장.png);
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: right;
+      }
+    </style>
   </head>
   <body>
-    <table border="1" width="600">
+    <table>
       <tr>
-        <td rowspan="3">
-          <img src="../image/img2.jpg" alt="soala" width="120" />
-        </td>
-        <td colspan="4"><h2>이력서</h2></td>
+        <td class="f1-1" rowspan="3"></td>
+        <td class="f1-2" colspan="4"><h2>이력서</h2></td>
       </tr>
       <tr>
-        <td rowspan="2">성명</td>
+        <td class="f2-1" rowspan="2">성명</td>
         <td colspan="2" rowspan="2">&nbsp;</td>
-        <td>생년월일</td>
+        <td class="bd">생년월일</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
       </tr>
-      <tr>
+      <tr class="cl-email">
         <td>이메일</td>
         <td colspan="4">&nbsp;</td>
       </tr>
-      <tr>
+      <tr class="cl-addr">
         <td>현주소</td>
         <td colspan="4">&nbsp;</td>
       </tr>
-      <tr>
+      <tr class="cl-phone">
         <td>연락처</td>
         <td colspan="4">&nbsp;</td>
       </tr>
-      <tr>
+      <tr class="cl-remain">
         <td>기 간</td>
         <td colspan="2">학력사항</td>
         <td colspan="2">비고</td>
+      </tr>
+      <tr>
+        <td class="blank">&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2">서명</td>
+        <td class="sign" colspan="3">(인)</td>
       </tr>
     </table>
   </body>
