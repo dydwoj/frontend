@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        border: 2px solid;
+      }
+      .container div {
+        background-color: silver;
+        /* width: 100px; */
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+      .container .item:nth-child(1) {
+        background: red;
+      }
+      .container .item:nth-child(2) {
+        background: plum;
+      }
+      .container .item:nth-child(3) {
+        background: paleturquoise;
+        flex-grow: 4;
+        order: 1;
+      }
+      .container .item:nth-child(4) {
+        background: peachpuff;
+      }
+      .container .item:nth-child(5) {
+        background: mediumpurple;
+      }
+      .container .item:nth-child(6) {
+        background: aquamarine;
+        order: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Good Job</div>
+      <div class="item">A</div>
+      <div class="item">Hello World</div>
+      <!-- <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div> -->
+    </div>
+  </body>
+</html>
