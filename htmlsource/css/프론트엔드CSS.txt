@@ -8,10 +8,30 @@
         2) h1.title : h1 의 class는 title
         3) ul>li*숫자 : ul 안에 li 를 숫자 개수만큼 만들기
 
+    - 자동완성으로 태그 만들기
         * h1.title.title => class="title title" 로 나옴
             => . 두번째 점부터 공백을 의미
             => 위의 공백은 title 클래스가 2개인 것임
             => 공백을 기준으로 클래스가 나뉘어짐
+        * .row>.column*4?>h2{Column $}+p{Some text...}
+            => <div class="row">
+                    <div class="column">
+                        <h2>Column 1</h2>
+                        <p>Some text...</p>
+                    </div>
+                    <div class="column">
+                        <h2>Column 2</h2>
+                        <p>Some text...</p>
+                    </div>
+                    <div class="column">
+                        <h2>Column 3</h2>
+                        <p>Some text...</p>
+                    </div>
+                    <div class="column">
+                        <h2>Column 4</h2>
+                        <p>Some text...</p>
+                    </div>
+                </div>
 
     - css 작성 위치
         1) head 태그 안 : 길지 않다면 추천
@@ -525,6 +545,10 @@
             - 기본
                 @media 를 통해 호출
                     1. screen
+                        ex. @media screen and (max-width: 768px) {} => 스크린 너비에 따른 화면 설정
+                            => {} 안에 변경할 내용 넣기
+
+                    
 
 
 
