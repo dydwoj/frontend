@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="header1" class="header">Header 1</h1>
+    <h2 id="header1" class="header" name="header2">Header 1</h2>
+    <img src="../../../image/1.jpg" alt="이미지" />
+    <div>
+      <a href="./remove2.html"></a>
+    </div>
+    <script>
+      // h1요소 가져온 후 속성 값 출력
+      const h1 = document.querySelector("h1");
+      console.log(h1.id);
+      // console.log(h1.class); => X
+      // 방법 1. console.log(h1.classList);
+      // 방법 2. getAttribute("속성명")
+      console.log(h1.getAttribute("class"));
+      // class 속성 제거 : removeAttribute()
+      h1.removeAttribute("class");
+
+      // img 요소 가져온 후 속성 값
+      const img = document.querySelector("img");
+      // 상대경로 처리 했지만 => 브라우저에서는 절대경로로 가져옴
+      console.log("절대경로 src : ", img.src);
+      console.log("상대경로 src : ", img.getAttribute("src"));
+      console.log("src : ", img.alt);
+      // 값만 제거
+      // img.src = "";
+      img.setAttribute("src", "");
+
+      // a 요소
+      const a = document.querySelector("a");
+      console.log("절대경로 href : ", a.href);
+      console.log("상대경로 href : ", a.getAttribute("href"));
+
+      // h2 찾은 후 name 요소 제거
+      const h2 = document.querySelector("h2").removeAttribute("name");
+    </script>
+  </body>
+</html>
