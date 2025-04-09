@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button type="button">Turn on the light</button>
+      <img src="./pic_bulboff.gif" alt="" />
+      <button type="button">Turn off the light</button>
+    </div>
+
+    <script>
+      // off 클릭시 img src ./pic_bulboff.gif 변경
+      // on 클릭시 ./pic_bulbon.gif 변경
+
+      // const btn = document.querySelector("button")
+      const img = document.querySelector("img");
+      document.querySelector("div").addEventListener("click", (e) => {
+        // 이벤트 어디서 왔을까?
+        if (e.target.textContent.includes("on")) {
+          img.src = "./pic_bulbon.gif";
+        } else {
+          img.src = "./pic_bulboff.gif";
+        }
+      });
+    </script>
+  </body>
+</html>

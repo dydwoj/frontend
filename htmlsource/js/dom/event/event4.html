@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* #target {
+        background-color: green;
+      } */
+    </style>
+  </head>
+  <body id="target">
+    <div>
+      <input type="radio" name="gender" id="" value="남성" />남성
+      <input type="radio" name="gender" id="" value="여성" />여성
+    </div>
+  </body>
+
+  <script>
+    // 사용자가 선택한 성별 콘솔에 출력
+    // const genders = document.querySelectorAll("[type='radio']");
+    // 방법 1.
+    // genders[0].addEventListener("click", (e) => console.log(e.target.value));
+    // genders[1].addEventListener("click", (e) => console.log(e.target.value));
+
+    // forEach 이용 방법
+    // genders.forEach((gender) => {
+    //   gender.addEventListener("click", (e) => console.log(e.target.value));
+    // });
+
+    // 이벤트 버블링
+    document.querySelector("div").addEventListener("click", (e) => console.log(e.target.value));
+  </script>
+</html>

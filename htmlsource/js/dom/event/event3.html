@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* #target {
+        background-color: green;
+      } */
+    </style>
+  </head>
+  <body id="target">
+    <div>
+      <input type="radio" name="color" id="" value="lightblue" />파랑
+      <input type="radio" name="color" id="" value="lightgreen" />녹색
+    </div>
+  </body>
+
+  <script>
+    // 해당 radio 클릭시 배경색 적용
+    // const rdos = document.querySelectorAll("[type='radio']");
+
+    // 방법 1.
+    // rdos[0].addEventListener("click", () => (document.body.style.backgroundColor = "lightblue"));
+    // rdos[1].addEventListener("click", () => (document.body.style.backgroundColor = "lightgreen"));
+    function changeColor(color) {
+      document.body.style.backgroundColor = color;
+    }
+
+    // rdos[0].addEventListener("click", (e) => {
+    //   const value = e.target.value;
+    //   console.log(value);
+    //   changeColor(e.target.value);
+    // });
+    // rdos[1].addEventListener("click", (e) => {
+    //   const value = e.target.value;
+    //   console.log(value);
+    //   changeColor(e.target.value);
+    // });
+
+    // 이벤트 버블링 이용
+    const colorNode = document.querySelector("div");
+    colorNode.addEventListener("click", (e) => changeColor(e.target.value));
+  </script>
+</html>

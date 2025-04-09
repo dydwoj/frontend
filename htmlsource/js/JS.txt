@@ -430,6 +430,8 @@
                         min()
                     8) 0 ~ 1 난수
                         random()
+                    9) toFixed(n)
+                        => 소수점 n번째 자리까지 표시
 
 << DOM >>
     참고 : dom
@@ -544,12 +546,17 @@
         - 동적으로 구성하기
 
             - 이벤트
-                참고 : remove1, event
+                참고 : remove1, event, bubble, submit
                 => 이벤트 발생 (Listener)
                 => Listener에게 무슨 행동을 취할지 코드를 작성해서 이벤트 발생시 실행시킴
 
                 * 이벤트란?
                     => 사이트에서 방문자가 취하는 모든 행위, 마우스 드래그, 클릭, 더블클릭, 입력 등...
+                * 함수 자리에 function 호출문을 넣으면 안됨!
+                    ex. addEventListener("이벤트명", name()) : 불가
+                        => addEventListener("이벤트명", () => name()) : 가능
+                * 이벤트 버블링
+                    => 하위에서 발생한 이벤트가 상위요소로 전파되는 개념
 
                 1) 이벤트 핸들러 속성 이용
                     => 태그에 직접 on~ 으로 시작하는 속성을 부여
@@ -558,14 +565,26 @@
                 
                 2) 이벤트 리스너 이용
                     - 작성
-                        1. 이벤트 대상 찾기
-                        2. name.addEventListener("이벤트명", 함수)
+                        1) 이벤트 대상 찾기
+                        2) name.addEventListener("이벤트명", 함수)
                             * 함수 : () => {}
                                 => () 안에 e 많이 사용
                                     - e 의 사용처
-                                        1. target() : 이벤트 일어난 대상 가져오기
+                                        1. target : 실제 이벤트가 일어난 대상 가져오기
                                         2. 이벤트 발생 대상의 부모요소 가져오기
-                                        3. preventDefault() : 이벤트 중지
+                                        3. preventDefault : 이벤트 중지
+                                        4. currentTarget : 이벤트 버블링으로 이벤트가 발생한 모든 요소
+
+                    - 이벤트명 메서드
+                        1) click : 클릭시 동작
+                            => 글자에도 걸 수 있음
+                            => a 태그 처럼 url 이동하는 경우에는 먼저 preventDefault 로 이동을 막고 해야 가능
+                
+                - submit 이벤트
+                    참고 : submit
+                    => form 요소에 일어남
+
+                    * form 요소에서 일어나는 거지 button 같은 것에서 일어나는게 아님!
 
             - 생성
                 참고 : create
@@ -604,9 +623,20 @@
             - 수정
                 참고 : update
 
+                - style 수정
+                    => 스크립트 단의 CSS 접근
+                        name.style
+
+                    * CSS 단에서는 ( - ) 사용 가능
+                        => but. 스크립트 단에서는 ( - ) 사용 불가능
+                        => 스크립트 단에서는 다른 방식으로 사용
+                            ex. CSS : font-size => 스크립트 : fontSize
+
                 - 메서드
                     1) replace("원본", "수정본")
                     2) 추가 : 속성은 자동으로 스페이스바 입력해서 들어감
                         add("추가본")
                         toggle("추가본") : 추가본이 속성에 없으면 : 추가 / 있으면 : 제거
+
+                
 

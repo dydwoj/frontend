@@ -12,3 +12,5 @@ console.log(`0 ~ 1 난수 : ${Math.random()}`);
 
 console.log(`0 ~ 9 : ${Math.random() * 10}`);
 console.log(`0 ~ 9 : ${Math.floor(Math.random() * 11)}`);
+const num = 59.656566;
+console.log(num.toFixed(2));
