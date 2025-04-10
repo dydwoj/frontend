@@ -334,6 +334,9 @@
             1) setTimeout(조건 , 시간(ms)) : 비동기식
                 => ms(밀리세컨드) 단위
                 => 지정한 시간이 지나야 조건이 실행됨
+
+                * 함수식
+                setTimeout(() => {조건}, ms)
             2) setInterval(조건, 간격시간(interval)) : 비동기식
                 => 지정한 간격마다 조건이 실행됨
             3) parseFloat() : String => float
@@ -538,6 +541,7 @@
                                 - getAttribute()
                                     => img, a 의 경로를 가져올때 일반적인 img(a).src : 절대경로
                                         => getAttribute 사용 : 상대경로
+                    4) nodeValue : 해당 태그 요소의 텍스트만 건듬 (뒤의 태그들을 건들지 않음)
 
                 - css 선택자를 이용해서 찾기
                     1) querySelector() : 조건에 맞는 첫번째 요소 찾아옴
@@ -579,12 +583,69 @@
                         1) click : 클릭시 동작
                             => 글자에도 걸 수 있음
                             => a 태그 처럼 url 이동하는 경우에는 먼저 preventDefault 로 이동을 막고 해야 가능
-                
-                - submit 이벤트
-                    참고 : submit
-                    => form 요소에 일어남
+                        2) submit
+                            참고 : submit
+                            => form 요소에 일어남
+                            * form 요소에서 일어나는 거지 button 같은 것에서 일어나는게 아님!
+                        3) change
+                            참고 : change
+                            => 조건에 맞는 변화를 일으킴
+                            => 요소 변경이 끝나면(focus를 빼면)
+                                => blur와 달리 기본값에 변화가 없다면 value의 기본값을 유지
+                        4) input
+                            참고 : change
+                            => 값을 수정할 때마다 발생
+                        5) blur
+                            참고 : change
+                            => 기본값에 대해서도 이벤트 발생
+                        6) mouse
+                            참고 : mouse
+                            => 마우스와 관련된 이벤트
 
-                    * form 요소에서 일어나는 거지 button 같은 것에서 일어나는게 아님!
+                            1. mousedown / mouseup
+                                => 마우스 왼쪽 버튼 누르고 있다가 뗄 때
+                            2. mouseover / mouseout
+                                => 마우스 커서가 요소 바깥에 있다가 요소 안으로 움직일 때
+                                => 마우스 커서가 요소 안에 있다가 요소 밖으로 움직일 때
+                            3. mousemove
+                                => 마우스가 움직일 때
+                            4. click / dbclick(double click)
+                            5. contextmenu
+                                => 마우스 오른쪽 버튼 눌렀을 때
+                        7) keyboard
+                            참고 : keyboard
+                            => 키보드와 관련된 이벤트
+
+                            * keyCode : 키보드 키들의 숫자들
+                                ex. a : 65 / 엔터 : 13 등...
+
+                            1. keydown
+                                => 키를 누를때
+                            2. keyup
+                                => 키에서 손을 뗄 때
+                        8) load
+                            참고 : load
+                            => 문서 로드 완료시, 코드 수행하기
+                            
+                            방법 1. DOMContentLoaded
+                                => document 에 이벤트 생성
+                            방법 2. window.onload
+                                => 이벤트 생성 함수처럼 생성해서
+                        9) scroll
+                            참고 : scroll
+                            => 스크롤 움직임을 감지
+                            * widow 에 이벤트 add
+
+                            - 관련 함수
+                                1. scrollX : X값의 위치값
+                                2. scrollY : Y값의 위치값
+                                3. scrollTo(값1, 값2) : 값2 에 scroll 고정
+                                4. scrollBy(값1, 값2) : 현재위치에서 값2만큼 scroll 움직이기
+                                5. scrollHeight : 해당 태그의 지정된 높이 + 스크롤 높이
+                                6. clientHeight : 해당 태그의 지정된 높이
+                                7. scrollTop : 세로스크롤이 아래로 움직일 때마다 가려진 영역의 높이
+                                8. innerHeight : 브라우저 body 높이 (도구창 등을 제외한 높이)
+                                9. outerHeight : 브라우저 전체 높이 (도구창 등 모든 창 포함)
 
             - 생성
                 참고 : create
@@ -637,6 +698,3 @@
                     2) 추가 : 속성은 자동으로 스페이스바 입력해서 들어감
                         add("추가본")
                         toggle("추가본") : 추가본이 속성에 없으면 : 추가 / 있으면 : 제거
-
-                
-

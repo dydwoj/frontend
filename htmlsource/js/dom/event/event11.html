@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div * {
+        padding: 10px;
+        margin: 10px;
+      }
+      [readonly] {
+        background: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>숫자 맞추기</h2>
+    <p>
+      컴퓨터가 생성한 숫자를 맞추는 게임입니다. <br />
+      숫자는 1 ~ 100 사이에 있습니다.
+    </p>
+    <div>
+      <label>
+        숫자
+        <input type="text" name="num1" id="num1" size="5" />
+        <button type="button">확인</button>
+      </label>
+    </div>
+    <div>
+      <label>
+        추측횟수
+        <input type="text" name="count" id="count" size="5" readonly />
+      </label>
+    </div>
+    <div>
+      <label>
+        힌트
+        <input type="text" name="hint" id="hint" readonly />
+      </label>
+    </div>
+
+    <script>
+      // 컴퓨터 숫자 구하기 - 임의의 숫자 (1~100)
+      const cumNum = Math.floor(Math.random() * 100) + 1;
+      const btn = document.querySelector("button");
+      const count = document.querySelector("#count");
+      const hint = document.querySelector("#hint");
+      let countNum = 0;
+
+      btn.addEventListener("click", (e) => {
+        const userNum = parseInt(document.querySelector("#num1").value);
+        countNum++;
+        count.value = countNum;
+        if (cumNum > userNum) {
+          hint.value = "추측값이 적습니다.";
+        } else if (cumNum < userNum) {
+          hint.value = "추측값이 많습니다.";
+        } else if (cumNum == userNum) {
+          hint.value = "정답입니다.";
+          e.target.disabled = "true";
+        }
+      });
+
+      // 확인을 누르면
+      // 사용자가 입력한 숫자 가져오기
+
+      // 입력숫자 와 컴퓨터 숫자 비교하기
+      // 추측횟수 + 1 : 화면에 보여주기
+      // 입력숫자 > 컴퓨터 : 추측값이 많습니다. (힌트에 보여주기)
+      // 입력숫자 < 컴퓨터 : 추측값이 적습니다. (힌트에 보여주기)
+      // 입력숫자 == 컴퓨터 : 정답입니다. (힌트에 보여주기)
+    </script>
+  </body>
+</html>
