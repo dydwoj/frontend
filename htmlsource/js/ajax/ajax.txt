@@ -1,0 +1,70 @@
+<< 서버와 클라이언트 >>
+
+    1) 하드웨어 서버
+        => 실제로 존재하는 큰 장치들
+    2) 소프트웨어 서버
+        => 리눅스(유닉스, 윈도우즈)가 설치된 서버
+
+    * 웹응용 어플리케이션
+        => 클라이언트와 서버가 서로 상호작용하는 활동들
+
+<< AJAX >>
+    Asynchronous JavaScript and XML : 비동기식JS와 XML(JSON)
+
+    * 비동기식 : 요청만하고 응답은 하든가 말든가
+    * 웹 : 동기식 => default
+
+    - JSON (Javascript Object Notation)
+        참고 : ajax
+        => JS객체 문법으로 데이터를 표현하기 위한 문자기반의 포맷
+        => 서버와 클라이언트가 주고받는 데이터 형식
+
+        * 웹의 f12 network 창의 fetch 의 status
+            200 : 정상
+            400번대 : 404 = 경로 틀림, 403 = 권한 없음
+            500번대 : 서버에러
+
+        - JS 객체
+        { id: 0, price: 70000, title: "Blossom Dress" }
+            => key 에 쌍따옴표("")가 없음
+
+        - JSON
+        { "name": "Molecule Man",
+            "age": 29,
+            "secretIdentity": "Dan Jukes",
+            "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"] }
+            => key 에 쌍따옴표("")가 존재
+
+        - JSON 배열
+            참고 : 
+
+            [
+                { "name": "Molecule Man",
+                "age": 29,
+                "secretIdentity": "Dan Jukes",
+                "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"] 
+                },
+                { "name": "Molecule Man",
+                "age": 29,
+                "secretIdentity": "Dan Jukes",
+                "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"] 
+                }
+            ]
+
+    - 비동기식 요청 처리
+        1) JS 코드
+            => basic but. 사용이 어려움
+        2) jQuery 코드
+        3) fetch 사용
+            - 생성
+                -기본
+                    1) fetch("서버주소") : 요청
+                    2) .then(응답도착 => 적절한 타입으로 변환 후 리턴)
+                    3) .then(도착한 응답 처리)
+
+                    - 실행순서
+                        위의 순서대로 실행되는게 아님!
+                            => 1번만 일단 하는거임
+                            => 2번, 3번은 응답이 오는데로 실행
+
+        4) axios 사용
