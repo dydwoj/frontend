@@ -167,7 +167,9 @@
                                     => 키=값 / &=and
                                     키 : name
                                     값 : text=입력값 / checkbox, radio = 체크한값
+                                        => 주소줄에 키/벨류가 남음
                                 2-2. POST
+                                    => 주소줄에 안보이게 싸서 보내는 방식
                             3) autocomplete="on/off" : 자동완성 사용 여부 (on-default)
                             4) name="이름" : 고유한 양식의 이름
                             5) novalidate : 서버로 데이터 전송시 유효성 검사하지 않음
