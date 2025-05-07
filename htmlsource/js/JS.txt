@@ -502,7 +502,6 @@
                 children : 요소(태그)노드만 가지고 있음
                     => for..of 함수가 가져오기 편함
 
-
         - 요소 가져오기
             참고 : getElementId, bootstrap/boot1.js
 
