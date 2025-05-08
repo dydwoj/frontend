@@ -57,17 +57,35 @@
             => basic but. 사용이 어려움
         2) jQuery 코드
         3) fetch 사용
+            => 브라우저 함수
             => default : get 방식
                 => 다른 방식의 사용 : fetch("주소", method: "방식")
+
             - 생성
-                -기본
+                - 기본
                     1) fetch("서버주소") : 요청
                     2) .then(응답도착 => 적절한 타입으로 변환 후 리턴)
                     3) .then(도착한 응답 처리)
+
+                    headers: {
+                    "Content-Type": "application/json", => json 으로 갈거야
+                    },
+                    body: JSON.stringify(data), => json 으로 받을거야
 
                     - 실행순서
                         위의 순서대로 실행되는게 아님!
                             => 1번만 일단 하는거임
                             => 2번, 3번은 응답이 오는데로 실행
-
         4) axios 사용
+            참고 : memo2.js
+            => 설치하는 함수 = 라이브러리 포함해야 함
+            => 기본적으로 메서드가 만들어져 있음
+            => 데이터가 fetch 와 달리 전체적인 데이터가 돌아옴
+
+                - 생성
+                    종류
+                        1) get : axios.get().then().catch().finally()
+                        2) post : axios.post().then().catch().finally()
+                        3) put : axios.put().then().catch().finally()
+                        4) delete : axios.delete().then().catch().finally()
+            

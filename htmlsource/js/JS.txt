@@ -542,7 +542,7 @@
                                         => getAttribute 사용 : 상대경로
                     4) nodeValue : 해당 태그 요소의 텍스트만 건듬 (뒤의 태그들을 건들지 않음)
                     5) closest("선택자") : 부모에서 제일 가까운 요소 찾기
-                    6) dtaset.속성 : data- 속성 가져오기
+                    6) dataset.속성 : data- 속성 가져오기
 
                 - css 선택자를 이용해서 찾기
                     1) querySelector() : 조건에 맞는 첫번째 요소 찾아옴

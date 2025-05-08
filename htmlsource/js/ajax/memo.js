@@ -39,6 +39,7 @@ document.querySelector(".btn-success").addEventListener("click", () => {
     });
 });
 
+// DELETE
 document.querySelector(".btn-danger").addEventListener("click", () => {
   // 사용자가 입력한 번호 가져오기
   const mno = document.querySelector("#remove [name='mno']").value;
@@ -52,4 +53,46 @@ document.querySelector(".btn-danger").addEventListener("click", () => {
       console.log(data);
       if (data) alert("삭제 성공");
     });
+});
+
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const form = e.target;
+
+  let mno = form.mno.value;
+  if (mno) {
+    // UPDATE
+    // 폼 데이터 가져와서 객체 생성
+    let data = {
+      mno: mno,
+      memoText: form.memoText.value,
+    };
+    fetch("http://localhost:8080/memo/update", {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  } else {
+    // CREATE
+    let data = {
+      memoText: form.memoText.value,
+    };
+    fetch("http://localhost:8080/memo/new", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
 });
