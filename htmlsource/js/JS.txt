@@ -264,8 +264,11 @@
                 => 주소복사
 
                 - 값복사
-                    => 배열1, 2 앞에 ...(spread) 붙이기
-                    => 위 처럼 3차원 배열이 아닌 값들만 복사가 되므로 2차원 배열이 됨
+                    * Spread Operator
+                        => 배열1, 2 앞에 ... 붙이기
+                            ex) [...배열1, ...배열2]
+                        => 3차원 배열이 아닌 값들만 복사가 되므로 2차원 배열이 됨
+                        => 주소의 복사가 아닌, 값의 복사만 일어남
 
     - 함수
         참고 : function
@@ -435,6 +438,32 @@
                         random()
                     9) toFixed(n)
                         => 소수점 n번째 자리까지 표시
+
+    - 구조분해 (Destructuring)
+        참고 : react
+
+        1) 객체 분해
+            => 일반적 : . 찍고 접근
+        2) 배열 분해
+            1. 우리가 아는 배열 인덱스 지정으로 분해
+            2. 공백을 이용한 순서로 분해
+                ex) 원본 배열 : const array = ["node.js", {}, 10, true];
+                    공백 이용 분해 : const [node, obj, , bool] = array;
+        2-1) Spread Operator
+            => 3차원 배열이 아닌 값들만 복사가 되므로 2차원 배열이 됨
+            => 주소의 복사가 아닌, 값의 복사만 일어남
+
+    - 일급함수
+        함수 자체를 변수에 대입 
+            ex) function logText(message) {
+                message();
+                }
+                logText(() => {
+                console.log("hi");
+                });
+
+    - import / export
+        => 서로 다른 클래스간에 사용할 수 있음
 
 << DOM >>
     참고 : dom
